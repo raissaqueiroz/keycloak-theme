@@ -73,7 +73,9 @@ docker run -d `
 
 Start-Sleep -Seconds 5
 
-Write-Host "`n------------------------------------------------"
+# Mensagem final
+Write-Host ""
+Write-Host "------------------------------------------------"
 Write-Host "|                                              |"
 Write-Host "|   ✅ MySQL e Keycloak subidos com sucesso!   |"
 Write-Host "|   🌐 Keycloak: http://localhost:8080/        |"
