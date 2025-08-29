@@ -46,11 +46,12 @@ docker run -d `
 Write-Host "⏳ Aguardando MySQL ficar pronto..."
 $progress = 0
 do {
-    Start-Sleep -Seconds 2
-    $status = docker exec keycloak-database mysqladmin ping -h "localhost" --silent 2>$null
+    Start-Sleep -Seconds 3
+    docker exec keycloak-database mysqladmin ping -h 127.0.0.1 --silent
+    $mysqlReady = $LASTEXITCODE -eq 0
     $progress = ($progress + 5) % 100
     Write-Progress -Activity "Iniciando MySQL..." -Status "$progress% completo" -PercentComplete $progress
-} until ($status -eq 0)
+} until ($mysqlReady)
 Write-Host "✅ MySQL pronto!"
 
 Write-Host "🚀 Subindo Keycloak em HTTP com tema customizado..."

@@ -54,7 +54,7 @@ chmod +x start-linux.sh
 1. Abra PowerShell como Administrador.
 2. Permita execução de scripts (uma vez):
 ```bash
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ``` 
 3. Execute o script:
 ```bash
