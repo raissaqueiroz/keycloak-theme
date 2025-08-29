@@ -14,7 +14,7 @@
 <body>
 <div class="error-container">
     <h1>${msg("errorTitle")!}!</h1>
-    <p>${errorMessage!? "Ocorreu um erro inesperado. Por favor, tente novamente."}</p>
+    <p>${msg("unexpectedError")}</p>
     <p><a href="${url.loginUrl}">Voltar para o login</a></p>
 </div>
 </body>
